@@ -1,0 +1,16 @@
+#jinja2: line_statement_prefix: "%", line_comment_prefix: "##"
+# {{ ansible_managed }}
+set ask askcc append dot save crt
+ignore Received Message-Id Resent-Message-Id Status Mail-From Return-Path Via Delivered-To
+
+alias root {{ ssmtp_root_recipient }}
+
+% if bsd_mailx is defined and bsd_mailx.aliases is defined
+%   for alias in bsd_mailx.aliases
+alias {{ alias }} {{ aliases[alias] }}
+%   endfor
+% endif
+
+## Local Variables:
+## mode: jinja2
+## End:

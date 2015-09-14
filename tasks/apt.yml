@@ -1,0 +1,9 @@
+---
+
+- name: apt - Install bsd-mailx
+
+  when: ansible_os_family == 'Debian'
+
+  apt:
+    name: bsd-mailx
+    update_cache: yes

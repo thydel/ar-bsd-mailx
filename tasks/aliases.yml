@@ -1,0 +1,7 @@
+---
+
+- name: aliases - Set up mail.rc
+
+  template:
+    src: mail.rc.j2
+    dest: /etc/mail.rc
