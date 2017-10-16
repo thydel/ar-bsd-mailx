@@ -1,8 +1,8 @@
 ---
 
-- include: apt.yml
+- include_tasks: apt.yml
   tags: apt
   when: ansible_distribution in [ 'Debian' ]
 
-- include: aliases.yml
+- include_tasks: aliases.yml
   tags: aliases
